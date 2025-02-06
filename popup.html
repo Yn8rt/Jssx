@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jssx🚬🚬</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #333; /* 黑色背景 */
+            color: #fff; /* 白色文字 */
+            min-width: 300px; /* 设置最小宽度 */
+        }
+        h2 {
+            margin: 0;
+            padding: 15px;
+            background-color: #2E8B57; /* 深绿色背景 */
+            color: #FFD700; /* 金色文字 */
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 添加文字阴影 */
+        }
+        #mainContainer {
+            background-color: #4F4F4F; /* 灰色背景 */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .btn-container button {
+            padding: 8px 15px;
+            font-size: 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+            min-width: 100px;
+        }
+        .refresh-btn {
+            background-color: #FFD700; /* 金色背景 */
+            color: #333; /* 黑色文字 */
+        }
+        .refresh-btn:hover {
+            background-color: #DAA520; /* 较浅的金色 */
+        }
+        .xss-btn {
+            background-color: #2E8B57; /* 深绿色背景 */
+            color: #FFD700; /* 金色文字 */
+        }
+        .xss-btn:hover {
+            background-color: #3CB371; /* 更深的绿色 */
+        }
+        .input-container {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-container input {
+            padding: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border: 1px solid #696969; /* 灰色边框 */
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            background-color: #1A1A1A; /* 更深的黑色 */
+            color: #fff; /* 白色文字 */
+        }
+        .input-container button {
+            background-color: #2E8B57; /* 深绿色背景 */
+            color: #FFD700; /* 金色文字 */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .input-container button:hover {
+            background-color: #3CB371; /* 更深的绿色 */
+        }
+        #results {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #results li {
+            background-color: #1A1A1A; /* 更深的黑色 */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff; /* 白色文字 */
+        }
+        .no-params {
+            text-align: center;
+            color: #999; /* 浅灰色文字 */
+            font-size: 14px;
+            background-color: #1A1A1A; /* 更深的黑色 */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .open-btn {
+            padding: 3px 8px;
+            font-size: 12px;
+            background-color: #2E8B57; /* 深绿色背景 */
+            color: #FFD700; /* 金色文字 */
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .open-btn:hover {
+            background-color: #3CB371; /* 更深的绿色 */
+        }
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #2E8B57; /* 深绿色背景 */
+            color: #FFD700; /* 金色文字 */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContainer" style="display: none;">
+        <h2>XSS🚬Fuzzer</h2>
+        <div class="btn-container">
+            <button class="refresh-btn">刷新</button>
+            <button class="xss-btn">XSS 测试</button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="payloadInput" placeholder="输入自定义 XSS payload">
+            <button id="savePayloadBtn">保存 Payload</button>
+        </div>
+        <ul id="results">
+            <!-- XSS detection results will be appended here -->
+        </ul>
+        <script src="popup.js"></script>
+    </div>
+</body>
+</html>
+
+
+
